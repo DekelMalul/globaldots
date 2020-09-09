@@ -17,9 +17,8 @@ pipelines:
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/globaldots.git
-            - ls -l
             - cd globaldots/pythonlib
-            - pip install wheel setuptools twine 
+            - pip install wheel setuptools 
             - python setup.py sdist bdist_wheel
             
      
@@ -30,7 +29,9 @@ pipelines:
             - name: build
         execution:
           onExecute:
-            - ls -l
+            - git clone https://github.com/DekelMalul/globaldots.git
+            - cd globaldots/pythonlib
+            - pip install twine
             - twine upload --config-file=.pypirc dist/*
  
  
