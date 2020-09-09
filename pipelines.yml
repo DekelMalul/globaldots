@@ -17,7 +17,7 @@ pipelines:
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/globaldots.git
-            - cd pythonlib
+            - cd globaldots/pythonlib
             - python3 setup.py sdist bdist_wheel
             
      
