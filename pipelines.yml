@@ -1,3 +1,9 @@
+resources:
+  - name: globaldot
+    type: GitRepo
+    configuration:
+      gitProvider: github       
+      path: DekelMalul/globaldots         
 pipelines:
   - name: pipeline_hello_world
     configuration:
