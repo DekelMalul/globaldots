@@ -30,7 +30,7 @@ pipelines:
             - name: build
         execution:
           onExecute:
-            - cd pythonlib
+            - ls -l
             - twine upload --config-file=.pypirc dist/*
  
  
