@@ -19,7 +19,7 @@ pipelines:
             - git clone https://github.com/DekelMalul/globaldots.git
             - ls -l
             - cd globaldots/pythonlib
-            - pip install -y wheel setuptools twine 
+            - pip install wheel setuptools twine 
             - python3 setup.py sdist bdist_wheel
             
      
