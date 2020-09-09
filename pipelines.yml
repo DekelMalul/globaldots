@@ -32,6 +32,7 @@ pipelines:
             - git clone https://github.com/DekelMalul/globaldots.git
             - cd globaldots/pythonlib
             - pip install twine
-            - twine upload --config-file=.pypirc dist/*
+            - twine register --config-file=./.pypirc dist/*
+            - twine upload --config-file=./.pypirc dist/*
  
  
