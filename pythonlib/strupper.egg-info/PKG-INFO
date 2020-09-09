@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: strupper
-Version: 0.0.1
+Version: 0.0.3
 Summary: A very basic calculator
 Home-page: UNKNOWN
 Author: Dekel Malul
@@ -16,7 +16,15 @@ Description: simple upper string lib
         -------------------
         - First Release
         
-Keywords: dekupper
+        0.0.2 (10/09/2020)
+        ------------------
+        - Sec Release
+        
+        0.0.3 (10/09/2020)
+        ------------------
+        - Ther Release
+        
+Keywords: strupper
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Education
