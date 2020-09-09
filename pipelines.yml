@@ -17,8 +17,10 @@ pipelines:
         execution:
           onExecute:
             - pwd
-            - ls -l
-
+            - cd pythonlib
+            - python3 setup.py sdist bdist_wheel
+            
+     
       - name: push
         type: Bash
         configuration:
@@ -26,7 +28,7 @@ pipelines:
             - name: build
         execution:
           onExecute:
-            - echo $MY_MESSAGE
-            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
+            - cd pythonlib
+            - twine upload --config-file=.pypirc dist/*
  
  
