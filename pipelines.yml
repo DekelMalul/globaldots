@@ -9,7 +9,7 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: pypi                       # <- Change to your integration name
-      buildName: test
+      buildName: push
       buildNumber: 1  
       
 pipelines:
@@ -42,4 +42,4 @@ pipelines:
             - pip install twine
             - printenv int_pypi_url
            # - twine register -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi strupper
-            - twine upload  -u $int_pypi_user -p $int_pypi_apikey --repository-url int_pypi_url dist/* 
+            - twine upload  -u $int_pypi_user -p $int_pypi_apikey --repository-url $int_pypi_url dist/* 
