@@ -29,8 +29,7 @@ pipelines:
           integrations:
           - name: pypi
           runtime:
-            sourceRepository:  pypi         # required if registry is Artifactory. e.g. docker-local
-
+            sourceRepository:  pypi-local         # required if registry is Artifactory. e.g. docker-local
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/kayhut.git
