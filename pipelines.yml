@@ -4,8 +4,7 @@ resources:
     configuration:
       gitProvider: github       
       path: DekelMalul/kayhut  
-     
-      
+
 pipelines:
   - name: build_python_liabery
     steps:
@@ -33,6 +32,6 @@ pipelines:
             - cd kayhut/pythonlib
             - pip install twine
            # - twine register -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi strupper
-            - twine upload  -u dekelmalul@gmail.com -p ${{ secrets.JFROG_PASS }} --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi dist/*
+            - twine upload  -u int_pypi_user -p int_pypi_apikey --repository-url int_pypi_url dist/*
  
  
