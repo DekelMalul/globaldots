@@ -1,16 +1,10 @@
 resources:
-  - name: kayhut
+  - name: globaldot
     type: GitRepo
     configuration:
       gitProvider: github       
-      path: DekelMalul/kayhut
-      
-  - name: myBuildInfo
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: pypi                       # <- Change to your integration name
-      buildName: push
-      buildNumber: 1  
+      path: DekelMalul/globaldots  
+     
       
 pipelines:
   - name: build_python_liabery
@@ -19,11 +13,11 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: kayhut
+            - name: globaldot
         execution:
           onExecute:
-            - git clone https://github.com/DekelMalul/kayhut.git
-            - cd kayhut/pythonlib
+            - git clone https://github.com/DekelMalul/globaldots.git
+            - cd globaldots/pythonlib
             - pip install wheel setuptools 
             - python setup.py sdist bdist_wheel
             
@@ -32,14 +26,11 @@ pipelines:
         type: Bash
         configuration:
           inputSteps:
-          - name: build
-          integrations:
-          - name: myBuildInfo
+            - name: build
         execution:
           onExecute:
-            - git clone https://github.com/DekelMalul/kayhut.git
-            - cd kayhut/pythonlib
+            - git clone https://github.com/DekelMalul/globaldots.git
+            - cd globaldots/pythonlib
             - pip install twine
-            - printenv int_pypi_url
            # - twine register -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi strupper
-            - twine upload  -u $int_pypi_user -p $int_pypi_apikey --repository-url $int_pypi_url dist/* 
+            - twine upload  -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi dist/*
