@@ -17,7 +17,7 @@ pipelines:
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/kayhut.git
-            - cd globaldots/pythonlib
+            - cd kayhut/pythonlib
             - pip install wheel setuptools 
             - python setup.py sdist bdist_wheel
             
@@ -30,7 +30,7 @@ pipelines:
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/kayhut.git
-            - cd globaldots/pythonlib
+            - cd kayhut/pythonlib
             - pip install twine
            # - twine register -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi strupper
             - twine upload  -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi dist/*
