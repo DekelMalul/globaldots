@@ -27,7 +27,7 @@ pipelines:
           inputSteps:
           - name: build
           integrations:
-          - name: pypi
+          - name: github
           runtime:
             sourceRepository:  pypi-local         # required if registry is Artifactory. e.g. docker-local
         execution:
