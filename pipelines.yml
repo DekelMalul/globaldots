@@ -5,6 +5,13 @@ resources:
       gitProvider: github       
       path: DekelMalul/kayhut
       
+  - name: myBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: pypi                       # <- Change to your integration name
+      buildName: test
+      buildNumber: 1  
+      
 pipelines:
   - name: build_python_liabery
     steps:
