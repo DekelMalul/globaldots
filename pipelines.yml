@@ -1,9 +1,9 @@
 resources:
-  - name: globaldot
+  - name: kayhut
     type: GitRepo
     configuration:
       gitProvider: github       
-      path: DekelMalul/globaldots  
+      path: DekelMalul/kayhut  
      
       
 pipelines:
@@ -13,10 +13,10 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: globaldot
+            - name: kayhut
         execution:
           onExecute:
-            - git clone https://github.com/DekelMalul/globaldots.git
+            - git clone https://github.com/DekelMalul/kayhut.git
             - cd globaldots/pythonlib
             - pip install wheel setuptools 
             - python setup.py sdist bdist_wheel
@@ -29,7 +29,7 @@ pipelines:
             - name: build
         execution:
           onExecute:
-            - git clone https://github.com/DekelMalul/globaldots.git
+            - git clone https://github.com/DekelMalul/kayhut.git
             - cd globaldots/pythonlib
             - pip install twine
            # - twine register -u dekelmalul@gmail.com -p AP5d2GKyYZ6DpaAyE9M3ZsLi3T6 --repository-url https://dekelartifactory.jfrog.io/artifactory/api/pypi/pypi strupper
