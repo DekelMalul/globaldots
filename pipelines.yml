@@ -26,6 +26,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: build
+          integrations:
+            - name: pypi
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/kayhut.git
