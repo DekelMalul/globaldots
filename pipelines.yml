@@ -34,7 +34,7 @@ pipelines:
           inputSteps:
           - name: build
           integrations:
-          - name: pypi
+          - name: myBuildInfo
         execution:
           onExecute:
             - git clone https://github.com/DekelMalul/kayhut.git
